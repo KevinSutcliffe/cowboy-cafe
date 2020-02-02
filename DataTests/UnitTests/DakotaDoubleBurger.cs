@@ -2,36 +2,36 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests
 {
-    public class DakotaDoubleBurgerTest
+    public class DakotaDoubleBurger
     {
         [Fact]
         public void DefaultPriceShouldBeCorrect()
         {
-            var burger = new DakotaDoubleBurger();
+            var burger = new Data.DakotaDoubleBurger();
             Assert.Equal(5.20, burger.Price);
         }
 
         [Fact]
         public void DefaultCaloriesShouldBeCorrect()
         {
-            var burger = new DakotaDoubleBurger();
+            var burger = new Data.DakotaDoubleBurger();
             Assert.Equal<uint>(464, burger.Calories);
         }
 
         [Fact]
         public void DefaultSpecialInstructionsShouldBeEmpty()
         {
-            var burger = new DakotaDoubleBurger();
+            var burger = new Data.DakotaDoubleBurger();
             Assert.Empty(burger.SpecialInstructions);
         }
 
         [Fact]
         public void HoldingBunShouldAddInstruction()
         {
-            var burger = new DakotaDoubleBurger();
+            var burger = new Data.DakotaDoubleBurger();
             burger.Bun = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
@@ -42,7 +42,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void HoldingKetchupShouldAddInstruction()
         {
-            var burger = new DakotaDoubleBurger();
+            var burger = new Data.DakotaDoubleBurger();
             burger.Ketchup = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
@@ -53,7 +53,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void HoldingMustardShouldAddInstruction()
         {
-            var burger = new DakotaDoubleBurger();
+            var burger = new Data.DakotaDoubleBurger();
             burger.Mustard = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
@@ -64,7 +64,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void HoldingPickleShouldAddInstruction()
         {
-            var burger = new DakotaDoubleBurger();
+            var burger = new Data.DakotaDoubleBurger();
             burger.Pickle = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
@@ -75,7 +75,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void HoldingCheeseShouldAddInstruction()
         {
-            var burger = new DakotaDoubleBurger();
+            var burger = new Data.DakotaDoubleBurger();
             burger.Cheese = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
@@ -86,7 +86,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void HoldingMayoShouldAddInstruction()
         {
-            var burger = new DakotaDoubleBurger();
+            var burger = new Data.DakotaDoubleBurger();
             burger.Mayo = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
@@ -97,7 +97,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void HoldingLettuceShouldAddInstruction()
         {
-            var burger = new DakotaDoubleBurger();
+            var burger = new Data.DakotaDoubleBurger();
             burger.Lettuce = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
@@ -108,7 +108,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void HoldingTomatoShouldAddInstruction()
         {
-            var burger = new DakotaDoubleBurger();
+            var burger = new Data.DakotaDoubleBurger();
             burger.Tomato = false;
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
@@ -119,7 +119,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void HoldingKetchupAndMustardShouldAddTwoInstructions()
         {
-            var burger = new DakotaDoubleBurger();
+            var burger = new Data.DakotaDoubleBurger();
             burger.Ketchup = false;
             burger.Mustard = false;
             Assert.Contains("hold ketchup", burger.SpecialInstructions);
@@ -129,7 +129,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void HoldingBunCheeseAndPickleShouldAddThreeInstructions()
         {
-            var burger = new DakotaDoubleBurger();
+            var burger = new Data.DakotaDoubleBurger();
             burger.Bun = false;
             burger.Cheese = false;
             burger.Pickle = false;
@@ -139,4 +139,3 @@ namespace CowboyCafe.DataTests
         }
     }
 }
-*/
