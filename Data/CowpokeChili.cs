@@ -71,7 +71,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Special instructions for the preparation of the chili
+        /// Special instructions for the preparation of the entree
         /// </summary>
         public List<string> SpecialInstructions
         {

@@ -48,6 +48,9 @@ namespace CowboyCafe.Data
             set { bread = value; }
         }
 
+        /// <summary>
+        /// Special instructions for the preparation of the entree
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get
