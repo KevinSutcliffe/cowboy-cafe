@@ -1,4 +1,14 @@
-﻿using System.Collections.Generic;
+﻿/*
+
+* Author: Kevin Sutcliffe
+
+* Class name: Pecos Pulled Pork
+
+* Purpose:
+
+*/
+
+using System.Collections.Generic;
 
 namespace CowboyCafe.Data
 {

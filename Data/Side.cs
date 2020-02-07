@@ -1,4 +1,16 @@
-﻿using System;
+﻿/*
+
+* Author: Nathan Bean
+
+* Edited by: Kevin Sutcliffe
+
+* Class name: Side
+
+* Purpose:
+
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

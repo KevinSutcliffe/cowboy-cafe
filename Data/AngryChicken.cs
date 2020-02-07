@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+
+* Author: Kevin Sutcliffe
+
+* Class name: Angry Chicken
+
+* Purpose:
+
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

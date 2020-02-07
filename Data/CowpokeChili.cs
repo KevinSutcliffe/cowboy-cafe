@@ -1,4 +1,16 @@
-﻿using System;
+﻿/*
+
+* Author: Nathan Bean
+
+* Edited by: Kevin Sutcliffe
+
+* Class name: Cowpoke Chili
+
+* Purpose: 
+
+*/
+
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

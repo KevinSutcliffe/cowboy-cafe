@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+
+* Author: Kevin Sutcliffe
+
+* Class name: Rustlers Ribs 
+
+* Purpose:
+
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

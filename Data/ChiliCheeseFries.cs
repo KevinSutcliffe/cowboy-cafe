@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+
+* Author: Kevin Sutcliffe
+
+* Class name: Chili Cheese Fries
+
+* Purpose:
+
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
