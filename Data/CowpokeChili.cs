@@ -6,7 +6,7 @@
 
 * Class name: Cowpoke Chili
 
-* Purpose: 
+* Purpose: Creates the cowpoke chili entree object
 
 */
 
@@ -18,7 +18,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Cowpoke Chili entree
     /// </summary>
-    public class CowpokeChili
+    public class CowpokeChili : Entree
     {
         private bool cheese = true;
         /// <summary>
@@ -63,7 +63,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the chili
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -74,7 +74,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the chili
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -85,7 +85,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

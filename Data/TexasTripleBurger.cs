@@ -4,7 +4,7 @@
 
 * Class name: Texas Triple Burger
 
-* Purpose:
+* Purpose: Creates the texas triple burger entree object
 
 */
 
@@ -14,12 +14,12 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class TexasTripleBurger
+    public class TexasTripleBurger : Entree
     {
 		/// <summary>
 		/// The price of the entree
 		/// </summary>
-		public double Price
+		public override double Price
 		{
 			get
 			{
@@ -30,7 +30,7 @@ namespace CowboyCafe.Data
 		/// <summary>
 		/// The calories of the entree
 		/// </summary>
-		public uint Calories
+		public override uint Calories
 		{
 			get
 			{
@@ -141,7 +141,7 @@ namespace CowboyCafe.Data
 		/// <summary>
 		/// List of instructions for the entree
 		/// </summary>
-		public List<string> SpecialInstructions
+		public override List<string> SpecialInstructions
 		{
 			get
 			{

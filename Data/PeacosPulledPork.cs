@@ -4,7 +4,7 @@
 
 * Class name: Pecos Pulled Pork
 
-* Purpose:
+* Purpose: Creates the pecos pulled pork entree object
 
 */
 
@@ -12,12 +12,12 @@ using System.Collections.Generic;
 
 namespace CowboyCafe.Data
 {
-	public class PecosPulledPork
+	public class PecosPulledPork : Entree
     {
 		/// <summary>
 		/// The price of the entree
 		/// </summary>
-		public double Price
+		public override double Price
 		{
 			get
 			{
@@ -28,7 +28,7 @@ namespace CowboyCafe.Data
 		/// <summary>
 		/// The calories of the entree
 		/// </summary>
-		public uint Calories
+		public override uint Calories
 		{
 			get
 			{
@@ -59,7 +59,7 @@ namespace CowboyCafe.Data
 		/// <summary>
 		/// List of instructions for the entree
 		/// </summary>
-		public List<string> SpecialInstructions
+		public override List<string> SpecialInstructions
 		{
 			get
 			{

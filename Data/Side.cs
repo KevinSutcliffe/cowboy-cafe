@@ -6,7 +6,7 @@
 
 * Class name: Side
 
-* Purpose:
+* Purpose: Abstract class that will be used in each side class
 
 */
 
@@ -32,7 +32,7 @@ namespace CowboyCafe.Data
         public abstract double Price { get; }
 
         /// <summary>
-        /// Gets the calories of the entree
+        /// Gets the calories of the side
         /// </summary>
         public abstract uint Calories { get; }
     }

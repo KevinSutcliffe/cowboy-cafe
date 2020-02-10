@@ -4,7 +4,7 @@
 
 * Class name: Chili Cheese Fries
 
-* Purpose:
+* Purpose: Creates the chili cheese fries side object
 
 */
 
@@ -16,6 +16,11 @@ namespace CowboyCafe.Data
 {
     public class ChiliCheeseFries : Side
     {
+        /// <summary>
+        /// Gets the size of the side
+        /// </summary>
+        public new Size Size;
+
         /// <summary>
         /// Gets the price of the side
         /// </summary>
@@ -38,7 +43,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Gets the calories of the entree
+        /// Gets the calories of the side
         /// </summary>
         public override uint Calories
         {

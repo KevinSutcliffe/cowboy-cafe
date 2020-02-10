@@ -4,7 +4,7 @@
 
 * Class name: Angry Chicken
 
-* Purpose:
+* Purpose: Creates the angry chicken entree object
 
 */
 
@@ -15,12 +15,12 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class AngryChicken
+    public class AngryChicken : Entree
     {
         /// <summary>
         /// The price of the entree
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -31,7 +31,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the entree
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -62,7 +62,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
