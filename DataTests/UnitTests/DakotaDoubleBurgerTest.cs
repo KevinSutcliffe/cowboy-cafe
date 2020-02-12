@@ -5,7 +5,7 @@ using CowboyCafe.Data;
 
 namespace CowboyCafe.DataTests
 {
-    public class DakotaDoubleBurger
+    public class DakotaDoubleBurgerTest
     {
         [Fact]
         public void DefaultPriceShouldBeCorrect()
