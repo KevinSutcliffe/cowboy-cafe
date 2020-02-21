@@ -20,6 +20,9 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        //OrderControl property add
+
         public MainWindow()
         {
             InitializeComponent();
