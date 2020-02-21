@@ -122,31 +122,11 @@ namespace CowboyCafe.Data
         {
             if (sweet)
             {
-                switch (Size)
-                {
-                    case Size.Small:
-                        return "Small Texas Sweet Tea";
-                    case Size.Medium:
-                        return "Medium Texas Sweet Tea";
-                    case Size.Large:
-                        return "Large Texas Sweet Tea";
-                    default:
-                        throw new NotImplementedException();
-                }
+                return Size + " Texas Sweet Tea";
             }
             else
             {
-                switch (Size)
-                {
-                    case Size.Small:
-                        return "Small Texas Plain Tea";
-                    case Size.Medium:
-                        return "Medium Texas Plain Tea";
-                    case Size.Large:
-                        return "Large Texas Plain Tea";
-                    default:
-                        throw new NotImplementedException();
-                }
+                return Size + " Texas Plain Tea";
             }
         }
     }

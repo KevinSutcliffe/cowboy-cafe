@@ -17,11 +17,6 @@ namespace CowboyCafe.Data
     public class PanDeCampo : Side
     {
         /// <summary>
-        /// Gets the size of the side
-        /// </summary>
-        public new Size Size;
-
-        /// <summary>
         /// Gets the price of the side
         /// </summary>
         public override double Price
@@ -72,11 +67,11 @@ namespace CowboyCafe.Data
             switch (Size)
             {
                 case Size.Small:
-                    return "Small Pan De Campo";
+                    return "Small Pan de Campo";
                 case Size.Medium:
-                    return "Medium Pan De Campo";
+                    return "Medium Pan de Campo";
                 case Size.Large:
-                    return "Large Pan De Campo";
+                    return "Large Pan de Campo";
                 default:
                     throw new NotImplementedException();
             }

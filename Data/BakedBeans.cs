@@ -17,11 +17,6 @@ namespace CowboyCafe.Data
     public class BakedBeans : Side
     {
         /// <summary>
-        /// Gets the size of the side
-        /// </summary>
-        public new Size Size;
-
-        /// <summary>
         /// Gets the price of the side
         /// </summary>
         public override double Price
@@ -76,7 +71,7 @@ namespace CowboyCafe.Data
                 case Size.Medium:
                     return "Medium Baked Beans";
                 case Size.Large:
-                    return "Large Baked Baans";
+                    return "Large Baked Beans";
                 default:
                     throw new NotImplementedException();
             }

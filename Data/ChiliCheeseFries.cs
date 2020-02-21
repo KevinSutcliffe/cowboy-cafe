@@ -17,11 +17,6 @@ namespace CowboyCafe.Data
     public class ChiliCheeseFries : Side
     {
         /// <summary>
-        /// Gets the size of the side
-        /// </summary>
-        public new Size Size;
-
-        /// <summary>
         /// Gets the price of the side
         /// </summary>
         public override double Price
