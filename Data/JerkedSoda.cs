@@ -108,6 +108,84 @@ namespace CowboyCafe.Data
                 if (!ice) { instructions.Add("Hold Ice"); }
                 return instructions;
             }
-        }        
+        }
+
+        /// <summary>
+        /// Returns the string representation of this object
+        /// </summary>
+        /// <returns>The string describing jerked soda</returns>
+        public override string ToString()
+        {
+            if (SodaFlavor == SodaFlavor.CreamSoda)
+            {
+                switch (Size)
+                {
+                    case Size.Small:
+                        return "Small Cream Soda Jerked Soda";
+                    case Size.Medium:
+                        return "Medium Cream Soda Jerked Soda";
+                    case Size.Large:
+                        return "Large Cream Soda Jerked Soda";
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+            else if(SodaFlavor == SodaFlavor.OrangeSoda)
+            {
+                switch (Size)
+                {
+                    case Size.Small:
+                        return "Small Orange Soda Jerked Soda";
+                    case Size.Medium:
+                        return "Medium Orange Soda Jerked Soda";
+                    case Size.Large:
+                        return "Large Orange Soda Jerked Soda";
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+            else if(SodaFlavor == SodaFlavor.Sarsparilla)
+            {
+                switch (Size)
+                {
+                    case Size.Small:
+                        return "Small Sarsparilla Jerked Soda";
+                    case Size.Medium:
+                        return "Medium Sarsparilla Jerked Soda";
+                    case Size.Large:
+                        return "Large Sarsparilla Jerked Soda";
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+            else if(SodaFlavor == SodaFlavor.BirchBeer)
+            {
+                switch (Size)
+                {
+                    case Size.Small:
+                        return "Small Birch Beer Jerked Soda";
+                    case Size.Medium:
+                        return "Medium Birch Beer Jerked Soda";
+                    case Size.Large:
+                        return "Large Birch Beer Jerked Soda";
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+            else 
+            {
+                switch (Size)
+                {
+                    case Size.Small:
+                        return "Small Root Beer Jerked Soda";
+                    case Size.Medium:
+                        return "Medium Root Beer Jerked Soda";
+                    case Size.Large:
+                        return "Large Root Beer Jerked Soda";
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+        }
     }
 }

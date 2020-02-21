@@ -62,5 +62,24 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Returns the string representation of this object
+        /// </summary>
+        /// <returns>The string describing the corn dodgers</returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Small:
+                    return "Small Corn Dodgers";
+                case Size.Medium:
+                    return "Medium Corn Dodgers";
+                case Size.Large:
+                    return "Large Corn Dodgers";
+                default:
+                    throw new NotImplementedException();
+            }
+        }
     }
 }

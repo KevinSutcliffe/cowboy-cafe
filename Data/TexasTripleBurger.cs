@@ -163,7 +163,7 @@ namespace CowboyCafe.Data
 		/// <summary>
 		/// Returns the string representation of this object
 		/// </summary>
-		/// <returns>The string describing the cowpoke chili</returns>
+		/// <returns>The string describing the texas triple burger</returns>
 		public override string ToString()
 		{
 			return "Texas Triple Burger";
