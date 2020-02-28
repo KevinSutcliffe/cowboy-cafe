@@ -48,8 +48,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="3">
-            <TextBlock>Order</TextBlock>
-            <ListView Name="OrderListView"></ListView>
+            <local:OrderSummaryControl/>
         </StackPanel>
     </Grid>
 </UserControl>
