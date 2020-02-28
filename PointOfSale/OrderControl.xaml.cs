@@ -29,9 +29,11 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        Order currentOrder;
         public OrderControl()
         {
             InitializeComponent();
+            currentOrder = new Order();
             AddCowpokeChili.Click += OnAddCowpokeChiliButtonClicked;
             AddRustlersRibs.Click += OnAddRustlersRibsButtonClicked;
             AddPecosPulledPork.Click += OnAddPecosPulledPorkButtonClicked;
@@ -56,7 +58,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new CowpokeChili());
+            currentOrder.Add(new CowpokeChili());
         }
 
         /// <summary>
@@ -66,7 +68,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddRustlersRibsButtonClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new RustlersRibs());
+            currentOrder.Add(new RustlersRibs());
         }
 
         /// <summary>
@@ -76,7 +78,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new PecosPulledPork());
+            currentOrder.Add(new PecosPulledPork());
         }
 
         /// <summary>
@@ -86,7 +88,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddTrailBurgerClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new TrailBurger());
+            currentOrder.Add(new TrailBurger());
         }
 
         /// <summary>
@@ -96,7 +98,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddDakotaDoubleBurgerClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new DakotaDoubleBurger());
+            currentOrder.Add(new DakotaDoubleBurger());
         }
 
         /// <summary>
@@ -106,7 +108,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddTexasTripleBurgerClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new TexasTripleBurger());
+            currentOrder.Add(new TexasTripleBurger());
         }
 
         /// <summary>
@@ -116,7 +118,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddAngryChickenClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new AngryChicken());
+            currentOrder.Add(new AngryChicken());
         }
 
         /// <summary>
@@ -126,7 +128,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddChiliCheeseFriesClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new ChiliCheeseFries());
+            currentOrder.Add(new ChiliCheeseFries());
         }
 
         /// <summary>
@@ -136,7 +138,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddCornDodgersClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new CornDodgers());
+            currentOrder.Add(new CornDodgers());
         }
 
         /// <summary>
@@ -146,7 +148,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddPanDeCampoClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new PanDeCampo());
+            currentOrder.Add(new PanDeCampo());
         }
 
         /// <summary>
@@ -156,7 +158,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddBakedBeansClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new BakedBeans());
+            currentOrder.Add(new BakedBeans());
         }
 
         /// <summary>
@@ -166,7 +168,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddJerkedSodaClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new JerkedSoda());
+            currentOrder.Add(new JerkedSoda());
         }
 
         /// <summary>
@@ -176,7 +178,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddTexasTeaClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new TexasTea());
+            currentOrder.Add(new TexasTea());
         }
 
         /// <summary>
@@ -186,7 +188,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddCowboyCoffeeClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new CowboyCoffee());
+            currentOrder.Add(new CowboyCoffee());
         }
 
         /// <summary>
@@ -196,7 +198,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddWaterClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new Water());
+            currentOrder.Add(new Water());
         }
     }
 }

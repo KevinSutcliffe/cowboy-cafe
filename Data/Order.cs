@@ -1,20 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class Order : IOrderItem
+    public class Order : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Constrcutor
+        /// </summary>
+        public Order()
+        {
+            lastOrderNumber += 1;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Order number
         /// </summary>
-        private uint lastOrderNumber;
+        private static uint lastOrderNumber = 0;
 
         /// <summary>
         /// list of items for the order
         /// </summary>
-        private List<IOrderItem> items;
+        private List<IOrderItem> items = new List<IOrderItem>();
 
         /// <summary>
         /// list of items for the order
@@ -22,7 +32,7 @@ namespace CowboyCafe.Data
         public IEnumerable<IOrderItem> Items { get { return items; } }
 
         /// <summary>
-        /// 
+        /// Cost of the order
         /// </summary>
         public double Subtotal
         {
@@ -38,17 +48,25 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// 
+        /// Adds an item to the order
         /// </summary>
-        public double Price => throw new NotImplementedException();
+        /// <param name="item"></param>
+        public void Add(IOrderItem item) 
+        {
+            items.Add(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+        }
 
         /// <summary>
-        /// special instructions for the order
+        /// Removes an item from the order
         /// </summary>
-        public List<string> SpecialInstructions => throw new NotImplementedException();
-
-        public void Add(IOrderItem item) { }
-
-        public void Remove(IOrderItem item) { }
+        /// <param name="item"></param>
+        public void Remove(IOrderItem item) 
+        {
+            items.Remove(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+        }
     }
 }
