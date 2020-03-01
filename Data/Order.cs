@@ -29,7 +29,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// list of items for the order
         /// </summary>
-        public IEnumerable<IOrderItem> Items { get { return items; } }
+        public IEnumerable<IOrderItem> Items { get { return items.ToArray(); } }
 
         /// <summary>
         /// Cost of the order

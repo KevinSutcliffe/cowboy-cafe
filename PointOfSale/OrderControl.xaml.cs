@@ -34,22 +34,6 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.DataContext = currentOrder;
-
-            AddCowpokeChili.Click += OnAddCowpokeChiliButtonClicked;
-            AddRustlersRibs.Click += OnAddRustlersRibsButtonClicked;
-            AddPecosPulledPork.Click += OnAddPecosPulledPorkButtonClicked;
-            AddTrailBurger.Click += OnAddTrailBurgerClicked;
-            AddDakotaDoubleBurger.Click += OnAddDakotaDoubleBurgerClicked;
-            AddTexasTripleBurger.Click += OnAddTexasTripleBurgerClicked;
-            AddAngryChicken.Click += OnAddAngryChickenClicked;
-            AddChiliCheeseFries.Click += OnAddChiliCheeseFriesClicked;
-            AddCornDodgers.Click += OnAddCornDodgersClicked;
-            AddPanDeCampo.Click += OnAddPanDeCampoClicked;
-            AddBakedBeans.Click += OnAddBakedBeansClicked;
-            AddJerkedSoda.Click += OnAddJerkedSodaClicked;
-            AddTexasTea.Click += OnAddTexasTeaClicked;
-            AddCowboyCoffee.Click += OnAddCowboyCoffeeClicked;
-            AddWater.Click += OnAddWaterClicked;
         }
 
         /// <summary>
