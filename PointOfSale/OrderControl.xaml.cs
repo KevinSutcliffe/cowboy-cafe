@@ -32,9 +32,8 @@ namespace PointOfSale
         Order currentOrder = new Order();
         public OrderControl()
         {
-
-            this.DataContext = currentOrder;
             InitializeComponent();
+            this.DataContext = currentOrder;
 
             AddCowpokeChili.Click += OnAddCowpokeChiliButtonClicked;
             AddRustlersRibs.Click += OnAddRustlersRibsButtonClicked;
@@ -60,14 +59,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
         {
-            //currentOrder.Add(new CowpokeChili());
-            if (DataContext is Order data)
-            {
-                if (sender is Button button)
-                {
-                    data.Add(new CowpokeChili());
-                }
-            }
+            currentOrder.Add(new CowpokeChili());
         }
 
         /// <summary>
@@ -77,14 +69,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddRustlersRibsButtonClicked(object sender, RoutedEventArgs e)
         {
-            //currentOrder.Add(new RustlersRibs());
-            if (DataContext is Order data)
-            {
-                if (sender is Button button)
-                {
-                    data.Add(new RustlersRibs());
-                }
-            }
+            currentOrder.Add(new RustlersRibs());
         }
 
         /// <summary>

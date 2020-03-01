@@ -22,10 +22,11 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-
+        /*
         public void OnRemoveItem(object sender, RoutedEventArgs e)
         {
 
         }
+        */
     }
 }

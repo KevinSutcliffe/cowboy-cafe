@@ -7,10 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="300">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
         <StackPanel>
             <TextBlock>Order</TextBlock>
-            <ListView x:Name="Receipt" ItemsSource="{Binding Path=Items}" Height="300">
-                <!--<ListBox.ItemTemplate>
+            <ListView x:Name="Receipt" ItemsSource="{Binding Path=Items}">
+                <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -18,11 +26,13 @@
                                 <ColumnDefinition Width="50"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="{Binding}"/>
-                            <TextBox Text="{Binding Path=Subtotal, StringFormat=c}"/>
                         </Grid>
                     </DataTemplate>
-                </ListBox.ItemTemplate>-->
+                </ListBox.ItemTemplate>
             </ListView>
+
         </StackPanel>
+        <TextBlock Grid.Row="1" Text="Subtotal:"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Subtotal, StringFormat=c}"/>
     </Grid>
 </UserControl>
