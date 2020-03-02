@@ -11,11 +11,10 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0">
-            <TextBlock TextAlignment="Center">Entrees</TextBlock>
+            <TextBlock FontSize="20" TextAlignment="Center">Entrees</TextBlock>
             <Button Name="AddCowpokeChili">Cowpoke Chili</Button>
             <Button Name="AddRustlersRibs">Rustler's Ribs</Button>
             <Button Name="AddPecosPulledPork">Pecos Pulled Pork</Button>
@@ -26,7 +25,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment="Center">Sides</TextBlock>
+            <TextBlock FontSize="20" TextAlignment="Center">Sides</TextBlock>
             <Button Name="AddChiliCheeseFries">Chilli Cheese Fries</Button>
             <Button Name="AddCornDodgers">Corn Dodgers</Button>
             <Button Name="AddPanDeCampo">Pan De Campo</Button>
@@ -34,7 +33,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="2">
-            <TextBlock TextAlignment="Center">Drinks</TextBlock>
+            <TextBlock FontSize="20" TextAlignment="Center">Drinks</TextBlock>
             <Button Name="AddJerkedSoda">Jerked Soda</Button>
             <Button Name="AddTexasTea">Texas Tea</Button>
             <Button Name="AddCowboyCoffee">Cowboy Coffee</Button>

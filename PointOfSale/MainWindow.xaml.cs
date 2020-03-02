@@ -23,9 +23,10 @@ namespace PointOfSale
     {
 
         //OrderControl property add
-
+        Order currentOrder = new Order();
         public MainWindow()
         {
+            this.DataContext = currentOrder;
             InitializeComponent();
         }
     }
