@@ -19,12 +19,9 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
-
-        Order currentOrder = new Order();
         public MenuItemSelectionControl()
         {
             InitializeComponent();
-            this.DataContext = currentOrder;
 
             AddCowpokeChili.Click += OnAddCowpokeChiliButtonClicked;
             AddRustlersRibs.Click += OnAddRustlersRibsButtonClicked;
@@ -50,7 +47,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new CowpokeChili());
+            if(DataContext is Order data)
+            {
+                data.Add(new CowpokeChili());
+            }
         }
 
         /// <summary>
@@ -60,7 +60,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddRustlersRibsButtonClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new RustlersRibs());
+            if (DataContext is Order data)
+            {
+                data.Add(new RustlersRibs());
+            }
         }
 
         /// <summary>
@@ -70,7 +73,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new PecosPulledPork());
+            if (DataContext is Order data)
+            {
+                data.Add(new PecosPulledPork());
+            }
         }
 
         /// <summary>
@@ -80,7 +86,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddTrailBurgerClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new TrailBurger());
+            if (DataContext is Order data)
+            {
+                data.Add(new TrailBurger());
+            }
         }
 
         /// <summary>
@@ -90,7 +99,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddDakotaDoubleBurgerClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new DakotaDoubleBurger());
+            if (DataContext is Order data)
+            {
+                data.Add(new DakotaDoubleBurger());
+            }
         }
 
         /// <summary>
@@ -100,7 +112,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddTexasTripleBurgerClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new TexasTripleBurger());
+            if (DataContext is Order data)
+            {
+                data.Add(new TexasTripleBurger());
+            }
         }
 
         /// <summary>
@@ -110,7 +125,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddAngryChickenClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new AngryChicken());
+            if (DataContext is Order data)
+            {
+                data.Add(new AngryChicken());
+            }
         }
 
         /// <summary>
@@ -120,7 +138,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddChiliCheeseFriesClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new ChiliCheeseFries());
+            if (DataContext is Order data)
+            {
+                data.Add(new ChiliCheeseFries());
+            }
         }
 
         /// <summary>
@@ -130,7 +151,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddCornDodgersClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new CornDodgers());
+            if (DataContext is Order data)
+            {
+                data.Add(new CornDodgers());
+            }
         }
 
         /// <summary>
@@ -140,7 +164,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddPanDeCampoClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new PanDeCampo());
+            if (DataContext is Order data)
+            {
+                data.Add(new PanDeCampo());
+            }
         }
 
         /// <summary>
@@ -150,7 +177,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddBakedBeansClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new BakedBeans());
+            if (DataContext is Order data)
+            {
+                data.Add(new BakedBeans());
+            }
         }
 
         /// <summary>
@@ -160,7 +190,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddJerkedSodaClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new JerkedSoda());
+            if (DataContext is Order data)
+            {
+                data.Add(new JerkedSoda());
+            }
         }
 
         /// <summary>
@@ -170,7 +203,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddTexasTeaClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new TexasTea());
+            if (DataContext is Order data)
+            {
+                data.Add(new TexasTea());
+            }
         }
 
         /// <summary>
@@ -180,7 +216,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddCowboyCoffeeClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new CowboyCoffee());
+            if (DataContext is Order data)
+            {
+                data.Add(new CowpokeChili());
+            }
         }
 
         /// <summary>
@@ -190,7 +229,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddWaterClicked(object sender, RoutedEventArgs e)
         {
-            currentOrder.Add(new Water());
+            if (DataContext is Order data)
+            {
+                data.Add(new Water());
+            }
         }
     }    
 }
