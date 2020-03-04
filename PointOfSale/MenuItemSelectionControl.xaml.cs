@@ -74,7 +74,10 @@ namespace PointOfSale
             var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order data)
             {
-                data.Add(new CowpokeChili());
+                var entree = new CowpokeChili();
+                var screen = new CustomizeCowpokeChili();
+                screen.DataContext = entree;
+                data.Add(entree);
                 orderControl.SwapScreen(new CustomizeCowpokeChili());
             }
         }

@@ -6,7 +6,11 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <StackPanel>
         <TextBlock FontSize="30" Text="Customize Cowpoke Chili!"/>
-    </Grid>
+        <StackPanel Orientation="Horizontal">
+            <Label>Green Onions</Label>
+            <CheckBox IsChecked="{Binding Path=GreenOnions}"/>
+        </StackPanel>
+    </StackPanel>
 </UserControl>
