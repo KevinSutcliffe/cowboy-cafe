@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -19,6 +20,8 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
+        private OrderControl orderControl;
+
         public MenuItemSelectionControl()
         {
             InitializeComponent();
@@ -38,7 +41,28 @@ namespace PointOfSale
             AddTexasTea.Click += OnAddTexasTeaClicked;
             AddCowboyCoffee.Click += OnAddCowboyCoffeeClicked;
             AddWater.Click += OnAddWaterClicked;
+
         }
+        /*
+         * One click event that could hanfle al the burrons
+        public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if(DataContext is Order order)
+            {
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CowpokeChili":
+                            order.Add(new CowpokeChili());
+                            break;
+
+                    }
+                }
+            }
+            
+        }
+        */
 
         /// <summary>
         /// Adds Cowpoke Chili to the Order List
@@ -47,9 +71,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order data)
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order data)
             {
                 data.Add(new CowpokeChili());
+                orderControl.SwapScreen(new CustomizeCowpokeChili());
             }
         }
 

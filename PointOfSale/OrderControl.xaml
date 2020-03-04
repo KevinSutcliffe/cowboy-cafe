@@ -25,9 +25,9 @@
         </Grid.RowDefinitions>
 
         <Button Grid.Column="0" Grid.Row="0" Name="ItemSelection">Item Selection</Button>
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
+        <Border x:Name="Container" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
             <local:MenuItemSelectionControl/>
-        </StackPanel>
+        </Border>
 
         <Button Grid.Column="1" Name="cancelOrder">Cancel Order</Button>
 

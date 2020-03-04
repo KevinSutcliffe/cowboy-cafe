@@ -15,7 +15,7 @@
 
         <StackPanel Grid.Column="0">
             <TextBlock FontSize="20" TextAlignment="Center">Entrees</TextBlock>
-            <Button Name="AddCowpokeChili">Cowpoke Chili</Button>
+            <Button Name="AddCowpokeChili" Tag="CowpokeChili" Click="OnAddCowpokeChiliButtonClicked">Cowpoke Chili</Button>
             <Button Name="AddRustlersRibs">Rustler's Ribs</Button>
             <Button Name="AddPecosPulledPork">Pecos Pulled Pork</Button>
             <Button Name="AddTrailBurger">Trail Burger</Button>
