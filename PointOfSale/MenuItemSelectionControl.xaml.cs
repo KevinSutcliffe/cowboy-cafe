@@ -58,11 +58,11 @@ namespace PointOfSale
                             orderControl.SwapScreen(new CustomizeCowpokeChili());
                             break;
                         case "RustlersRibs":
-                            entree = new RustlersRibs();
-                            screen = new CustomizeCowpokeChili();
-                            screen.DataContext = entree;
-                            order.Add(entree);
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            var t = new RustlersRibs();
+                            var s = new CustomizeRustlersRibs();
+                            s.DataContext = t;
+                            order.Add(t);
+                            orderControl.SwapScreen(new CustomizeRustlersRibs());
                             break;
                         case "PecosPulledPork":
                             order.Add(new PecosPulledPork());
