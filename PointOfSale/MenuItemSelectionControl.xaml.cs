@@ -20,248 +20,93 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
-        private OrderControl orderControl;
-
         public MenuItemSelectionControl()
         {
             InitializeComponent();
 
-            AddCowpokeChili.Click += OnAddCowpokeChiliButtonClicked;
-            AddRustlersRibs.Click += OnAddRustlersRibsButtonClicked;
-            AddPecosPulledPork.Click += OnAddPecosPulledPorkButtonClicked;
-            AddTrailBurger.Click += OnAddTrailBurgerClicked;
-            AddDakotaDoubleBurger.Click += OnAddDakotaDoubleBurgerClicked;
-            AddTexasTripleBurger.Click += OnAddTexasTripleBurgerClicked;
-            AddAngryChicken.Click += OnAddAngryChickenClicked;
-            AddChiliCheeseFries.Click += OnAddChiliCheeseFriesClicked;
-            AddCornDodgers.Click += OnAddCornDodgersClicked;
-            AddPanDeCampo.Click += OnAddPanDeCampoClicked;
-            AddBakedBeans.Click += OnAddBakedBeansClicked;
-            AddJerkedSoda.Click += OnAddJerkedSodaClicked;
-            AddTexasTea.Click += OnAddTexasTeaClicked;
-            AddCowboyCoffee.Click += OnAddCowboyCoffeeClicked;
-            AddWater.Click += OnAddWaterClicked;
+            AddCowpokeChili.Click += OnItemAddButtonClicked;
+            AddRustlersRibs.Click += OnItemAddButtonClicked;
+            AddPecosPulledPork.Click += OnItemAddButtonClicked;
+            AddTrailBurger.Click += OnItemAddButtonClicked;
+            AddDakotaDoubleBurger.Click += OnItemAddButtonClicked;
+            AddTexasTripleBurger.Click += OnItemAddButtonClicked;
+            AddAngryChicken.Click += OnItemAddButtonClicked;
+            AddChiliCheeseFries.Click += OnItemAddButtonClicked;
+            AddCornDodgers.Click += OnItemAddButtonClicked;
+            AddPanDeCampo.Click += OnItemAddButtonClicked;
+            AddBakedBeans.Click += OnItemAddButtonClicked;
+            AddJerkedSoda.Click += OnItemAddButtonClicked;
+            AddTexasTea.Click += OnItemAddButtonClicked;
+            AddCowboyCoffee.Click += OnItemAddButtonClicked;
+            AddWater.Click += OnItemAddButtonClicked;
 
         }
-        /*
-         * One click event that could hanfle al the burrons
         public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order order)
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order order)
             {
                 if (sender is Button button)
                 {
                     switch (button.Tag)
                     {
                         case "CowpokeChili":
-                            order.Add(new CowpokeChili());
+                            var entree = new CowpokeChili();
+                            var screen = new CustomizeCowpokeChili();
+                            screen.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            break;
+                        case "RustlersRibs":
+                            entree = new RustlersRibs();
+                            screen = new CustomizeCowpokeChili();
+                            screen.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            break;
+                        case "PecosPulledPork":
+                            order.Add(new PecosPulledPork());
+                            break;
+                        case "TrailBurger":
+                            order.Add(new TrailBurger());
+                            break;
+                        case "DakotaDoubleBurger":
+                            order.Add(new DakotaDoubleBurger());
+                            break;
+                        case "TexasTripleBurger":
+                            order.Add(new TexasTripleBurger());
+                            break;
+                        case "AngryChicken":
+                            order.Add(new AngryChicken());
+                            break;
+                        case "ChiliCheeseFries":
+                            order.Add(new ChiliCheeseFries());
+                            break;
+                        case "CornDodgers":
+                            order.Add(new CornDodgers());
+                            break;
+                        case "PanDeCampo":
+                            order.Add(new PanDeCampo());
+                            break;
+                        case "BakedBeans":
+                            order.Add(new BakedBeans());
+                            break;
+                        case "JerkedSoda":
+                            order.Add(new JerkedSoda());
+                            break;
+                        case "TexasTea":
+                            order.Add(new TexasTea());
+                            break;
+                        case "CowboyCoffee":
+                            order.Add(new CowboyCoffee());
+                            break;
+                        case "Water":
+                            order.Add(new Water());
                             break;
 
                     }
                 }
-            }
-            
-        }
-        */
-
-        /// <summary>
-        /// Adds Cowpoke Chili to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
-        {
-            var orderControl = this.FindAncestor<OrderControl>();
-            if (DataContext is Order data)
-            {
-                var entree = new CowpokeChili();
-                var screen = new CustomizeCowpokeChili();
-                screen.DataContext = entree;
-                data.Add(entree);
-                orderControl.SwapScreen(new CustomizeCowpokeChili());
-            }
-        }
-
-        /// <summary>
-        /// Adds Rustlers Ribs to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddRustlersRibsButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new RustlersRibs());
-            }
-        }
-
-        /// <summary>
-        /// Adds Pecos Pulled Pork to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new PecosPulledPork());
-            }
-        }
-
-        /// <summary>
-        /// Adds Trail Burger to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddTrailBurgerClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new TrailBurger());
-            }
-        }
-
-        /// <summary>
-        /// Adds Dakota Double Burger to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddDakotaDoubleBurgerClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new DakotaDoubleBurger());
-            }
-        }
-
-        /// <summary>
-        /// Adds Texas Triple Burger to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddTexasTripleBurgerClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new TexasTripleBurger());
-            }
-        }
-
-        /// <summary>
-        /// Adds Angry Chicken to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddAngryChickenClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new AngryChicken());
-            }
-        }
-
-        /// <summary>
-        /// Adds Chili Cheese Fries to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddChiliCheeseFriesClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new ChiliCheeseFries());
-            }
-        }
-
-        /// <summary>
-        /// Adds Corn Dodgers to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddCornDodgersClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new CornDodgers());
-            }
-        }
-
-        /// <summary>
-        /// Adds Pan De Campo to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddPanDeCampoClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new PanDeCampo());
-            }
-        }
-
-        /// <summary>
-        /// Adds Baked Beans to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddBakedBeansClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new BakedBeans());
-            }
-        }
-
-        /// <summary>
-        /// Adds Jerked Soda to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddJerkedSodaClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new JerkedSoda());
-            }
-        }
-
-        /// <summary>
-        /// Adds Texas Tea to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddTexasTeaClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new TexasTea());
-            }
-        }
-
-        /// <summary>
-        /// Adds Cowboy Coffee to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddCowboyCoffeeClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new CowpokeChili());
-            }
-        }
-
-        /// <summary>
-        /// Adds Water to the Order List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddWaterClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order data)
-            {
-                data.Add(new Water());
-            }
+            }            
         }
     }    
 }
