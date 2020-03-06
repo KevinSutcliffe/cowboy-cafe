@@ -55,14 +55,16 @@ namespace PointOfSale
                             var screen = new CustomizeCowpokeChili();
                             screen.DataContext = entree;
                             order.Add(entree);
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            orderControl.SwapScreen(screen);
                             break;
                         case "RustlersRibs":
-                            var t = new RustlersRibs();
-                            var s = new CustomizeRustlersRibs();
-                            s.DataContext = t;
-                            order.Add(t);
+                            /*
+                            var entree = new RustlersRibs();
+                            var screen = new CustomizeRustlersRibs();
+                            screen.DataContext = entree;
+                            order.Add(entree);
                             orderControl.SwapScreen(new CustomizeRustlersRibs());
+                            */
                             break;
                         case "PecosPulledPork":
                             order.Add(new PecosPulledPork());
@@ -107,6 +109,26 @@ namespace PointOfSale
                     }
                 }
             }            
+        }
+
+        void AddItemAndOpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
+        {
+            // We need to have an Order to add this item to
+            var order = DataContext as Order;
+            if (order == null) throw new Exception("DataContext expected to be an order instantiated");
+
+            // Not all OrderItems need to be customized
+            if(screen != null)
+            {
+                var orderControl = this.FindAncestor<OrderControl>();
+                if (orderControl == null) throw new Exception();
+
+                //Add the item to the customization screen and launch it
+                screen.DataContext = item;
+                orderControl.SwapScreen(screen);
+            }
+
+            order.Add(item);
         }
     }    
 }

@@ -21,7 +21,7 @@
             <Button Name="AddTrailBurger" Tag="TrailBurger">Trail Burger</Button>
             <Button Name="AddDakotaDoubleBurger" Tag="DakotaDoubleBurger">Dakota Double Burger</Button>
             <Button Name="AddTexasTripleBurger" Tag="TexasTripleBurger">Texas Triple Burger</Button>
-            <Button Name="AddAngryChicken" Tag="RustlersRibs">Angry Chicken</Button>
+            <Button Name="AddAngryChicken" Tag="AngryChicken">Angry Chicken</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
