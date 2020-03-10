@@ -46,7 +46,11 @@ namespace CowboyCafe.Data
         public bool Pickle
         {
             get { return pickle; }
-            set { pickle = value; }
+            set 
+            { 
+                pickle = value;
+                NotifyOfPropertyChange("Bread");
+            }
         }
 
         /// <summary>
@@ -56,7 +60,11 @@ namespace CowboyCafe.Data
         public bool Bread
         {
             get { return bread; }
-            set { bread = value; }
+            set 
+            { 
+                bread = value;
+                NotifyOfPropertyChange("Bread");
+            }
         }
 
         /// <summary>

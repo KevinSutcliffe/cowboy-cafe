@@ -58,13 +58,11 @@ namespace PointOfSale
                             orderControl.SwapScreen(screen);
                             break;
                         case "RustlersRibs":
-                            /*
-                            var entree = new RustlersRibs();
-                            var screen = new CustomizeRustlersRibs();
-                            screen.DataContext = entree;
-                            order.Add(entree);
-                            orderControl.SwapScreen(new CustomizeRustlersRibs());
-                            */
+                            var entree2 = new RustlersRibs();
+                            var screen2 = new CustomizeRustlersRibs();
+                            screen2.DataContext = entree2;
+                            order.Add(entree2);
+                            orderControl.SwapScreen(screen2);
                             break;
                         case "PecosPulledPork":
                             order.Add(new PecosPulledPork());
@@ -79,7 +77,11 @@ namespace PointOfSale
                             order.Add(new TexasTripleBurger());
                             break;
                         case "AngryChicken":
-                            order.Add(new AngryChicken());
+                            var entree7 = new AngryChicken();
+                            var screen7 = new CustomizeAngryChicken();
+                            screen7.DataContext = entree7;
+                            order.Add(entree7);
+                            orderControl.SwapScreen(screen7);
                             break;
                         case "ChiliCheeseFries":
                             order.Add(new ChiliCheeseFries());

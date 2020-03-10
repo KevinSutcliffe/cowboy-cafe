@@ -18,7 +18,6 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0">Order</TextBlock>
-        <TextBlock FontSize="13" Grid.Column="1" Text="{Binding Path=lastOrderNumber}"/>
         <StackPanel Grid.Row="1">
             <ListView x:Name="Receipt" ItemsSource="{Binding Path=Items}">
                 <ListBox.ItemTemplate>
@@ -28,13 +27,8 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <TextBlock FontSize="13" Grid.Row="0" Grid.Column="0" Text="{Binding}"/>
-                            <TextBlock FontSize="13" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=Price, StringFormat=c}"/>
-                            <ListView Grid.Row="1" Grid.RowSpan="2" ItemsSource="{Binding Path=SpecialInstructions}"/>
+                            <TextBlock FontSize="13" Grid.Column="0" Text="{Binding}"/>
+                            <TextBlock FontSize="13" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Price, StringFormat=c}"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
