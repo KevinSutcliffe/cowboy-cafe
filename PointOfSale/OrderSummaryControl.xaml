@@ -27,6 +27,10 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
                             <TextBlock FontSize="13" Grid.Column="0" Text="{Binding}"/>
                             <TextBlock FontSize="13" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Price, StringFormat=c}"/>
                         </Grid>

@@ -33,18 +33,20 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.DataContext = new Order();
-            cancelOrder.Click += OnCancelOrder;
-            completeOrder.Click += OnCompleteOrder;
+            cancelOrder.Click += OnCancelOrder_Click;
+            completeOrder.Click += OnCompleteOrder_Click;
         }
 
-        void OnCancelOrder(object sender, RoutedEventArgs e)
+        void OnCancelOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+            ItemSelection_Click(sender, e);
         }
 
-        void OnCompleteOrder(object sender, RoutedEventArgs e)
+        void OnCompleteOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+            ItemSelection_Click(sender, e);
         }
 
         public void SwapScreen(UIElement element)
@@ -55,6 +57,11 @@ namespace PointOfSale
         public void OnMenuItemSelectionButtonClicked(object sender, RoutedEventArgs e)
         {
             Container.Child = new MenuItemSelectionControl();
+        }
+
+        private void ItemSelection_Click(object sender, RoutedEventArgs e)
+        {
+            SwapScreen(new MenuItemSelectionControl());
         }
     }
 }
