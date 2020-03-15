@@ -65,16 +65,32 @@ namespace PointOfSale
                             orderControl.SwapScreen(screen2);
                             break;
                         case "PecosPulledPork":
-                            order.Add(new PecosPulledPork());
+                            var entree3 = new PecosPulledPork();
+                            var screen3 = new CustomizePecosPulledPork();
+                            screen3.DataContext = entree3;
+                            order.Add(entree3);
+                            orderControl.SwapScreen(screen3);
                             break;
                         case "TrailBurger":
-                            order.Add(new TrailBurger());
+                            var entree4 = new TrailBurger();
+                            var screen4 = new CustomizeTrailBurger();
+                            screen4.DataContext = entree4;
+                            order.Add(entree4);
+                            orderControl.SwapScreen(screen4);
                             break;
                         case "DakotaDoubleBurger":
-                            order.Add(new DakotaDoubleBurger());
+                            var entree5 = new DakotaDoubleBurger();
+                            var screen5 = new CustomizeDakotaDoubleBurger();
+                            screen5.DataContext = entree5;
+                            order.Add(entree5);
+                            orderControl.SwapScreen(screen5);
                             break;
                         case "TexasTripleBurger":
-                            order.Add(new TexasTripleBurger());
+                            var entree6 = new TexasTripleBurger();
+                            var screen6 = new CustomizeTexasTripleBurger();
+                            screen6.DataContext = entree6;
+                            order.Add(entree6);
+                            orderControl.SwapScreen(screen6);
                             break;
                         case "AngryChicken":
                             var entree7 = new AngryChicken();
@@ -84,7 +100,11 @@ namespace PointOfSale
                             orderControl.SwapScreen(screen7);
                             break;
                         case "ChiliCheeseFries":
-                            order.Add(new ChiliCheeseFries());
+                            var entree8 = new ChiliCheeseFries();
+                            var screen8 = new CustomizeChiliCheeseFries();
+                            screen8.DataContext = entree8;
+                            order.Add(entree8);
+                            orderControl.SwapScreen(screen8);
                             break;
                         case "CornDodgers":
                             order.Add(new CornDodgers());

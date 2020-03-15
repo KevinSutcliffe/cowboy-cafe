@@ -49,7 +49,7 @@ namespace CowboyCafe.Data
             set 
             { 
                 pickle = value;
-                NotifyOfPropertyChange("Bread");
+                NotifyOfPropertyChange("Pickle");
             }
         }
 

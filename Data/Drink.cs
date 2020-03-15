@@ -11,13 +11,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Base class representing a drink
     /// </summary>
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets the price of the drink
@@ -43,5 +44,17 @@ namespace CowboyCafe.Data
         /// Gets if the drink should have ice
         /// </summary>
         public virtual bool Ice { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Helper method to notify of boolean customization property changes
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
     }
 }

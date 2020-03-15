@@ -55,5 +55,15 @@ namespace CowboyCafe.Data
 
         public List<string> SpecialInstructions { get; }
 
+        /// <summary>
+        /// Helper method to notify of boolean customization property changes
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
+
     }
 }
