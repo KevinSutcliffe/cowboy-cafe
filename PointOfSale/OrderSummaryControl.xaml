@@ -31,6 +31,13 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
+                            <ListBox Grid.Row="1" ItemsSource="{Binding Path=SpecialInstructions}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}" FontSize="13"/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
                             <TextBlock FontSize="13" Grid.Column="0" Text="{Binding}"/>
                             <TextBlock FontSize="13" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Price, StringFormat=c}"/>
                         </Grid>
