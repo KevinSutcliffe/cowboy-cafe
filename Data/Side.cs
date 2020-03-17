@@ -24,13 +24,16 @@ namespace CowboyCafe.Data
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private Size size
-        {
+        private Size size;
+        /// <summary>
+        /// Gets the size of the entree
+        /// </summary>
+        public virtual Size Size {
             get
             {
                 return size;
-            }
-            set
+            } 
+            set 
             {
                 size = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
@@ -38,10 +41,6 @@ namespace CowboyCafe.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
             }
         }
-        /// <summary>
-        /// Gets the size of the entree
-        /// </summary>
-        public virtual Size Size { get; set; }
 
         /// <summary>
         /// Gets the price of the side

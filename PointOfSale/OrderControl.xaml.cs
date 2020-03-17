@@ -63,5 +63,13 @@ namespace PointOfSale
         {
             SwapScreen(new MenuItemSelectionControl());
         }
+
+        public void ItemChanged()
+        {
+            if(DataContext is Order data)
+            {
+                data.OnItemPropertyChanged();
+            }
+        }
     }
 }
