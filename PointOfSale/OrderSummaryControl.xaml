@@ -51,8 +51,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock FontSize="20" Text="Subtotal:"/>
-            <TextBlock FontSize="20" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=Subtotal, StringFormat=c}"/>
+            <TextBlock FontSize="30" Text="Subtotal:"/>
+            <TextBlock FontSize="30" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=Subtotal, StringFormat=c}"/>
         </Grid>
     </Grid>
 </UserControl>

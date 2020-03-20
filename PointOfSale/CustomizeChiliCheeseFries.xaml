@@ -24,8 +24,8 @@
         <StackPanel>
             <ListBox Name="selectSize" SelectedIndex="0" Margin="8"
                ItemsSource="{Binding Source={StaticResource size}}"
-               SelectedItem="{Binding Path=Size}"/>
-            <Button x:Name="Update" Click="Finish_Button_Click">Update</Button>
+               SelectedItem="{Binding Path=Size}"
+                     SelectionChanged="Finish_Button_Click"/>
         </StackPanel>
     </Grid>
 </UserControl>

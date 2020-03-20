@@ -107,13 +107,25 @@ namespace PointOfSale
                             orderControl.SwapScreen(screen8);
                             break;
                         case "CornDodgers":
-                            order.Add(new CornDodgers());
+                            var entree9 = new CornDodgers();
+                            var screen9 = new CustomizeCornDodgers();
+                            screen9.DataContext = entree9;
+                            order.Add(entree9);
+                            orderControl.SwapScreen(screen9);
                             break;
                         case "PanDeCampo":
-                            order.Add(new PanDeCampo());
+                            var entree10 = new PanDeCampo();
+                            var screen10 = new CustomizePanDeCampo();
+                            screen10.DataContext = entree10;
+                            order.Add(entree10);
+                            orderControl.SwapScreen(screen10);
                             break;
                         case "BakedBeans":
-                            order.Add(new BakedBeans());
+                            var entree11 = new BakedBeans();
+                            var screen11 = new CustomizeBakedBeans();
+                            screen11.DataContext = entree11;
+                            order.Add(entree11);
+                            orderControl.SwapScreen(screen11);
                             break;
                         case "JerkedSoda":
                             order.Add(new JerkedSoda());

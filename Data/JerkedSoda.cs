@@ -94,7 +94,11 @@ namespace CowboyCafe.Data
         public override bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set 
+            { 
+                ice = value;
+                NotifyOfPropertyChange("Ice");
+            }
         }
 
         /// <summary>
