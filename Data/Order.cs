@@ -70,6 +70,9 @@ namespace CowboyCafe.Data
             OnItemPropertyChanged();
         }
 
+        /// <summary>
+        /// Updates the items and subtotal
+        /// </summary>
         public void OnItemPropertyChanged()
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));

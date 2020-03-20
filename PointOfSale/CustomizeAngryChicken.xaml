@@ -8,9 +8,9 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <TextBlock FontSize="30" Text="Customize Angry Chicken!"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=Bread}">Bread</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
+        <StackPanel >
+            <CheckBox FontSize="20" Margin="5" Padding="5,-8,0,0" IsChecked="{Binding Path=Bread}">Bread</CheckBox>
+            <CheckBox FontSize="20" Margin="5" Padding="5,-8,0,0" IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
         </StackPanel>
     </StackPanel>
 </UserControl>

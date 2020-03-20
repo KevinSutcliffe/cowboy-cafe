@@ -24,6 +24,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Updates the order summary control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Finish_Button_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();

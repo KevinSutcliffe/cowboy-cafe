@@ -37,33 +37,50 @@ namespace PointOfSale
             completeOrder.Click += OnCompleteOrder_Click;
         }
 
+        /// <summary>
+        /// Cancels the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnCancelOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
             ItemSelection_Click(sender, e);
         }
 
+        /// <summary>
+        /// Completes the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnCompleteOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
             ItemSelection_Click(sender, e);
         }
 
+        /// <summary>
+        /// Swaps the to the elements screen
+        /// </summary>
+        /// <param name="element"></param>
         public void SwapScreen(UIElement element)
         {
             Container.Child = element;
         }
-
-        public void OnMenuItemSelectionButtonClicked(object sender, RoutedEventArgs e)
-        {
-            Container.Child = new MenuItemSelectionControl();
-        }
-
+        
+        /// <summary>
+        /// Updates display so user can add more items to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
             SwapScreen(new MenuItemSelectionControl());
         }
 
+        /// <summary>
+        /// Updates an item when it is changed
+        /// </summary>
         public void ItemChanged()
         {
             if(DataContext is Order data)

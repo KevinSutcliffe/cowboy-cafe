@@ -15,24 +15,24 @@ using CowboyCafe.Extensions;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizeChiliCheeseFries.xaml
+    /// Interaction logic for CustomizeJerkedSoda.xaml
     /// </summary>
-    public partial class CustomizeChiliCheeseFries : UserControl
+    public partial class CustomizeJerkedSoda : UserControl
     {
-        public CustomizeChiliCheeseFries()
+        public CustomizeJerkedSoda()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// Updates order control summary
+        /// Updates the order summary control
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Finish_Button_Click(object sender, RoutedEventArgs e)
+        private void UpdateOrder_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
-            if(orderControl is OrderControl)
+            if (orderControl is OrderControl)
             {
                 orderControl.ItemChanged();
             }

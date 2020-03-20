@@ -41,6 +41,12 @@ namespace PointOfSale
             AddWater.Click += OnItemAddButtonClicked;
 
         }
+
+        /// <summary>
+        /// Updates the screen to the item selected customize screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
@@ -128,7 +134,11 @@ namespace PointOfSale
                             orderControl.SwapScreen(screen11);
                             break;
                         case "JerkedSoda":
-                            order.Add(new JerkedSoda());
+                            var entree12 = new JerkedSoda();
+                            var screen12 = new CustomizeJerkedSoda();
+                            screen12.DataContext = entree12;
+                            order.Add(entree12);
+                            orderControl.SwapScreen(screen12);
                             break;
                         case "TexasTea":
                             order.Add(new TexasTea());
@@ -145,6 +155,7 @@ namespace PointOfSale
             }            
         }
 
+        /*
         void AddItemAndOpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
         {
             // We need to have an Order to add this item to
@@ -164,5 +175,6 @@ namespace PointOfSale
 
             order.Add(item);
         }
+        */
     }    
 }
