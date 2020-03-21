@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class CowboyCoffee : Drink
+    public class CowboyCoffee : Drink, INotifyPropertyChanged
     {
-        /// <summary>
-        /// Gets the size of the drink
-        /// </summary>
-        public new Size Size;
-
         /// <summary>
         /// Gets the price of the drink
         /// </summary>
@@ -60,7 +56,11 @@ namespace CowboyCafe.Data
         public override bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set 
+            { 
+                ice = value;
+                NotifyOfPropertyChange("Ice");
+            }
         }
 
         /// <summary>
@@ -70,14 +70,22 @@ namespace CowboyCafe.Data
         public bool RoomForCream
         {
             get { return cream; }
-            set { cream = value; }
+            set
+            { 
+                cream = value;
+                NotifyOfPropertyChange("RoomForCream");
+            }
         }
 
         private bool decaf = false;
         public bool Decaf
         {
             get { return decaf; }
-            set { decaf = value; }
+            set 
+            { 
+                decaf = value;
+                NotifyOfPropertyChange("Decaf");
+            }
         }
 
         /// <summary>

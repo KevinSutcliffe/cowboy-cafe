@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.CustomizeBakedBeans"
+﻿<UserControl x:Class="PointOfSale.CustomizeCowboyCoffee"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -18,12 +18,19 @@
         </ObjectDataProvider>
     </UserControl.Resources>
 
+
+
     <Grid>
+
         <StackPanel>
-            <ListBox Name="selectSize" SelectedIndex="0" Margin="8"
+            <ListBox Name="selectSize"
                ItemsSource="{Binding Source={StaticResource size}}"
                SelectedItem="{Binding Path=Size}"
-               SelectionChanged="Finish_Button_Click"/>
+               SelectionChanged="UpdateOrder_Click"/>
+            <CheckBox FontSize="20" Margin="5" Padding="5,-8,0,0" IsChecked="{Binding Path=Decaf}">Decaf</CheckBox>
+            <CheckBox FontSize="20" Margin="5" Padding="5,-8,0,0" IsChecked="{Binding Path=RoomForCream}">Cream</CheckBox>
+            <CheckBox FontSize="20" Margin="5" Padding="5,-8,0,0" IsChecked="{Binding Path=Ice}">Ice</CheckBox>
+            <Button Click="UpdateOrder_Click">Update Order</Button>
         </StackPanel>
     </Grid>
 </UserControl>

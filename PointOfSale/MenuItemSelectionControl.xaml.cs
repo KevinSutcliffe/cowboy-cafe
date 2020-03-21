@@ -141,13 +141,25 @@ namespace PointOfSale
                             orderControl.SwapScreen(screen12);
                             break;
                         case "TexasTea":
-                            order.Add(new TexasTea());
+                            var entree13 = new TexasTea();
+                            var screen13 = new CustomizeTexasTea();
+                            screen13.DataContext = entree13;
+                            order.Add(entree13);
+                            orderControl.SwapScreen(screen13);
                             break;
                         case "CowboyCoffee":
-                            order.Add(new CowboyCoffee());
+                            var entree14 = new CowboyCoffee();
+                            var screen14 = new CustomizeCowboyCoffee();
+                            screen14.DataContext = entree14;
+                            order.Add(entree14);
+                            orderControl.SwapScreen(screen14);
                             break;
                         case "Water":
-                            order.Add(new Water());
+                            var entree15 = new Water();
+                            var screen15 = new CustomizeWater();
+                            screen15.DataContext = entree15;
+                            order.Add(entree15);
+                            orderControl.SwapScreen(screen15);
                             break;
 
                     }

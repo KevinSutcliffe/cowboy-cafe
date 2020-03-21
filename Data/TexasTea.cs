@@ -7,11 +7,6 @@ namespace CowboyCafe.Data
     public class TexasTea : Drink
     {
         /// <summary>
-        /// Gets the size of the drink
-        /// </summary>
-        public new Size Size;
-
-        /// <summary>
         /// Gets the price of the drink
         /// </summary>
         public override double Price
@@ -77,7 +72,11 @@ namespace CowboyCafe.Data
         public bool Sweet
         {
             get { return sweet; }
-            set { sweet = value; }
+            set 
+            { 
+                sweet = value;
+                NotifyOfPropertyChange("Sweet");
+            }
         }
 
         /// <summary>
@@ -87,7 +86,11 @@ namespace CowboyCafe.Data
         public override bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set 
+            { 
+                ice = value;
+                NotifyOfPropertyChange("Ice");
+            }
         }
 
         /// <summary>
@@ -97,7 +100,11 @@ namespace CowboyCafe.Data
         public bool Lemon
         {
             get { return lemon; }
-            set { lemon = value; }
+            set 
+            { 
+                lemon = value;
+                NotifyOfPropertyChange("Lemon");
+            }
         }
 
         /// <summary>

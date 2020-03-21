@@ -32,7 +32,6 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
-            this.DataContext = new Order();
             cancelOrder.Click += OnCancelOrder_Click;
             completeOrder.Click += OnCompleteOrder_Click;
         }

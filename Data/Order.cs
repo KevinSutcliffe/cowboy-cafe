@@ -12,14 +12,17 @@ namespace CowboyCafe.Data
         /// </summary>
         public Order()
         {
-            lastOrderNumber += 1;
+            orderNumber += 1;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        private static uint orderNumber = 0;
         /// <summary>
         /// Order number
         /// </summary>
-        private static uint lastOrderNumber = 0;
+        public uint OrderNumber 
+        { get { return orderNumber; } private set { orderNumber = value;  } }
 
         /// <summary>
         /// list of items for the order
@@ -53,8 +56,6 @@ namespace CowboyCafe.Data
         /// <param name="item"></param>
         public void Add(IOrderItem item) 
         {
-            
-            
             items.Add(item);
             OnItemPropertyChanged();
         }

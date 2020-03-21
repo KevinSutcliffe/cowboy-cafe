@@ -7,11 +7,6 @@ namespace CowboyCafe.Data
     public class JerkedSoda : Drink
     {
         /// <summary>
-        /// Gets the size of the drink
-        /// </summary>
-        public new Size Size;
-
-        /// <summary>
         /// Flavor of the drink
         /// </summary>
         public SodaFlavor SodaFlavor;

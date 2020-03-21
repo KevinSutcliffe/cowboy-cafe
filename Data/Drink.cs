@@ -39,7 +39,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets the size of the drink
         /// </summary>
-        public virtual Size Size 
+        public Size Size 
         {
             get
             {
@@ -59,7 +59,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public virtual bool Ice { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public virtual event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Helper method to notify of boolean customization property changes

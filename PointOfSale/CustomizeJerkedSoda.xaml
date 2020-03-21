@@ -16,21 +16,29 @@
                 <x:Type TypeName="local1:Size" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+        <ObjectDataProvider MethodName="GetValues"
+                        ObjectType="{x:Type sys:Enum}"
+                        x:Key="flavor">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local1:SodaFlavor" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
     </UserControl.Resources>
     
-    <StackPanel>
-        <TextBlock FontSize="30" Text="Customize Jerked Soda!"/>
+    
+
+    <Grid>
 
         <StackPanel>
             <ListBox Name="selectSize" SelectedIndex="0" Margin="8"
                ItemsSource="{Binding Source={StaticResource size}}"
                SelectedItem="{Binding Path=Size}"
                SelectionChanged="UpdateOrder_Click"/>
-        </StackPanel>
-
-        <StackPanel >
+            <ListBox Name="selectFlavor" SelectedIndex="0" Margin="8"
+               ItemsSource="{Binding Source={StaticResource flavor}}"
+               SelectedItem="{Binding Path=Flavor}"
+               SelectionChanged="UpdateOrder_Click"/>
             <CheckBox FontSize="20" Margin="5" Padding="5,-8,0,0" IsChecked="{Binding Path=Ice}">Ice</CheckBox>
         </StackPanel>
-        
-    </StackPanel>
+    </Grid>
 </UserControl>
