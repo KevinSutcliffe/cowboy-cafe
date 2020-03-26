@@ -35,14 +35,16 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
+                                <ColumnDefinition Width="42"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBlock FontSize="13" Grid.Column="0" Text="{Binding}"/>
+                            <TextBlock FontSize="14" Grid.Column="0" Text="{Binding}"/>
                             <ListBox Grid.Row="1" ItemsSource="{Binding Path=SpecialInstructions}"/>
-                            <TextBlock FontSize="13" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Price, StringFormat=c}"/>
+                            <TextBlock FontSize="14" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Price, StringFormat=c}"/>
+                            <Button Grid.Column="2" Click="OnRemoveItem" Padding="0,-8,0,0" FontSize="25" Height="27" Width="35" Background="Red">x</Button>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

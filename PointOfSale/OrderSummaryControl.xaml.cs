@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Data;
 
 namespace PointOfSale
 {
@@ -22,11 +23,24 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-        /*
+        
+        /// <summary>
+        /// Removes item from the Order Summary
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnRemoveItem(object sender, RoutedEventArgs e)
         {
-
+            if (DataContext is Order data)
+            {
+                if (sender is Button button)
+                {
+                    if(button.DataContext is IOrderItem item)
+                    {
+                        data.Remove(item);
+                    }
+                }
+            }
         }
-        */
     }
 }
