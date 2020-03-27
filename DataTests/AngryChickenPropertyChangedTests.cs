@@ -27,6 +27,7 @@ namespace CowboyCafe.DataTests
                 chicken.Bread = false;
             });
         }
+
         // Test 3: Changing the "Bread" property should invoke the PropertyChanged for "SpecialInstructions"
         [Fact]
         public void ChangingBreadShouldInvokePropertyChangedForSpecialInstructions()
@@ -38,7 +39,7 @@ namespace CowboyCafe.DataTests
             });
         }
 
-        // Test 2: Changing the "Pickle" property should invoke the PropertyChanged for "Bread"
+        // Test 4: Changing the "Pickle" property should invoke the PropertyChanged for "Pickle"
         [Fact]
         public void ChangingPickleShouldInvokePropertyChangedForPickle()
         {
@@ -49,7 +50,7 @@ namespace CowboyCafe.DataTests
             });
         }
 
-        // Test 3: Changing the "Pickle" property should invoke the PropertyChanged for "SpecialInstructions"
+        // Test 5: Changing the "Pickle" property should invoke the PropertyChanged for "SpecialInstructions"
         [Fact]
         public void ChangingPickleShouldInvokePropertyChangedForSpecialInstructions()
         {
