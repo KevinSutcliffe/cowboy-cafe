@@ -44,6 +44,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Swaps screen to the item clicked in the order summary control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OrderSummaryItemSelected(object sender, SelectionChangedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
