@@ -27,13 +27,13 @@
             <TextBlock Grid.Column="1" Text="{Binding Path=OrderNumber}"/>
         </Grid>
         
-        <StackPanel Grid.Row="1">
-            <ListView x:Name="Receipt" ItemsSource="{Binding Path=Items}">
+        <Grid Grid.Row="1">
+            <ListBox x:Name="Receipt" ItemsSource="{Binding Path=Items}" SelectionChanged="OrderSummaryItemSelected" ScrollViewer.VerticalScrollBarVisibility="Visible">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="200"/>
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="42"/>
                             </Grid.ColumnDefinitions>
@@ -48,8 +48,8 @@
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-            </ListView>
-        </StackPanel>
+            </ListBox>
+        </Grid>
         
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>

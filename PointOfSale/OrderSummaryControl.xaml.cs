@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -39,6 +40,100 @@ namespace PointOfSale
                     {
                         data.Remove(item);
                     }
+                }
+            }
+        }
+
+        public void OrderSummaryItemSelected(object sender, SelectionChangedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (orderControl == null) return;
+
+            foreach (object i in e.AddedItems)
+            {
+                if(i is CowpokeChili)
+                {
+                    CustomizeCowpokeChili screen = new CustomizeCowpokeChili();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
+                else if(i is RustlersRibs)
+                {
+                    CustomizeRustlersRibs screen = new CustomizeRustlersRibs();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
+                else if(i is PecosPulledPork)
+                {
+                    CustomizePecosPulledPork screen = new CustomizePecosPulledPork();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
+                else if(i is TrailBurger)
+                {
+                    CustomizeTrailBurger screen = new CustomizeTrailBurger();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
+                else if(i is DakotaDoubleBurger)
+                {
+                    CustomizeDakotaDoubleBurger screen = new CustomizeDakotaDoubleBurger();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
+                else if(i is TexasTripleBurger)
+                {
+                    CustomizeTexasTripleBurger screen = new CustomizeTexasTripleBurger();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
+                else if(i is ChiliCheeseFries)
+                {
+                    CustomizeChiliCheeseFries screen = new CustomizeChiliCheeseFries();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
+                else if(i is CornDodgers)
+                {
+                    CustomizeCornDodgers screen = new CustomizeCornDodgers();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
+                else if(i is PanDeCampo)
+                {
+                    CustomizePanDeCampo screen = new CustomizePanDeCampo();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
+                else if(i is BakedBeans)
+                {
+                    CustomizeBakedBeans screen = new CustomizeBakedBeans();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
+                else if(i is JerkedSoda)
+                {
+                    CustomizeJerkedSoda screen = new CustomizeJerkedSoda();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
+                else if(i is TexasTea)
+                {
+                    CustomizeTexasTea screen = new CustomizeTexasTea();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
+                else if(i is CowboyCoffee)
+                {
+                    CustomizeCowboyCoffee screen = new CustomizeCowboyCoffee();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
+                else if(i is Water)
+                {
+                    CustomizeWater screen = new CustomizeWater();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
                 }
             }
         }
