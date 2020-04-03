@@ -54,8 +54,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnCompleteOrder_Click(object sender, RoutedEventArgs e)
         {
+            SwapScreen(new TransactionControl());
+            /*
             this.DataContext = new Order();
             ItemSelection_Click(sender, e);
+            */
         }
 
         /// <summary>
