@@ -33,16 +33,22 @@ namespace PointOfSale
             if(result == CashRegister.ResultCode.Success)
             {
                 MessageBox.Show("Success");
+                ReceiptPrinter receiptPrinter = new ReceiptPrinter();
+                receiptPrinter.Print("Order #" + currentOrder.OrderNumber + "\n" + DateTime.Now + "\nItems:\n" + currentOrder.Items + 
+                    "\nSubtotal: " + currentOrder.Subtotal + "\nPrice: " + currentOrder.Total + "\nPayment type: Card");
+
+                
             }
             else
             {
-                MessageBox.Show("Error " + result);
+                MessageBox.Show("Error: " + result);
             }
         }
 
-        private void PrintReceipt()
+        private void PaymentByCash_Clicked(object sender, RoutedEventArgs e)
         {
-            ReceiptPrinter receiptPrinter = new ReceiptPrinter();
+            PaymentOptions.Visibility = Visibility.Hidden;
+            CashTransaction.Visibility = Visibility.Visible;
         }
     }
 }

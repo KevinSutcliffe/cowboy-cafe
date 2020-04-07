@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CashRegister;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -57,11 +58,15 @@ namespace PointOfSale
         public void OnIncreaseClicked(object sender, RoutedEventArgs e)
         {
             Quantity++;
+            var CashRegisterControl = this.FindAncestor<CashRegisterControl>();
+            CashRegisterControl.TotalPaid();
         }
 
         public void OnDecreaseClicked(object sender, RoutedEventArgs e)
         {
             Quantity--;
+            var CashRegisterControl = this.FindAncestor<CashRegisterControl>();
+            CashRegisterControl.TotalPaid();
         }
     }
 }

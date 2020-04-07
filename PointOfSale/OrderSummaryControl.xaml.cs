@@ -92,6 +92,12 @@ namespace PointOfSale
                     screen.DataContext = i;
                     orderControl.SwapScreen(screen);
                 }
+                else if (i is AngryChicken)
+                {
+                    CustomizeAngryChicken screen = new CustomizeAngryChicken();
+                    screen.DataContext = i;
+                    orderControl.SwapScreen(screen);
+                }
                 else if(i is ChiliCheeseFries)
                 {
                     CustomizeChiliCheeseFries screen = new CustomizeChiliCheeseFries();

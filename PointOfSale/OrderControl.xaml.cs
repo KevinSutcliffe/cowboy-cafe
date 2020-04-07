@@ -55,10 +55,9 @@ namespace PointOfSale
         void OnCompleteOrder_Click(object sender, RoutedEventArgs e)
         {
             SwapScreen(new TransactionControl());
-            /*
-            this.DataContext = new Order();
-            ItemSelection_Click(sender, e);
-            */
+
+            //Testing for cash register
+            //SwapScreen(new CashTransaction());
         }
 
         /// <summary>
