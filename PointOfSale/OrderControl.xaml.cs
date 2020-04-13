@@ -21,6 +21,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CashRegister;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -29,11 +31,14 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        CashDrawer cd;
+
         public OrderControl()
         {
             InitializeComponent();
             cancelOrder.Click += OnCancelOrder_Click;
             completeOrder.Click += OnCompleteOrder_Click;
+            cd = new CashDrawer();
         }
 
         /// <summary>
@@ -54,10 +59,19 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnCompleteOrder_Click(object sender, RoutedEventArgs e)
         {
-            SwapScreen(new TransactionControl());
+            //Container.Child = new TransactionControl();
+            Order o = (Order)DataContext;
+            IOrderItem[] io = (IOrderItem[])o.Items;
 
-            //Testing for cash register
-            //SwapScreen(new CashTransaction());
+            /* Check to make sure there is a transaction available */
+            if (io.Length != 0)
+            {
+                MainWindow mw = this.FindAncestor<MainWindow>();
+                //Container.Child = new TestTransControl(cd, this);
+                mw.Container.Child = new TestTransControl(cd, this);
+
+                DataContext = new Order();
+            }
         }
 
         /// <summary>
@@ -76,7 +90,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
-            SwapScreen(new MenuItemSelectionControl());
+            Container.Child = new MenuItemSelectionControl();
+            //SwapScreen(new MenuItemSelectionControl());
         }
 
         /// <summary>

@@ -7,38 +7,99 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height=".75*"/>
-        </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <local:BillControl x:Name="OneControl" Denomination="One" Quantity="{Binding Path=Ones}"/>
-            <local:BillControl x:Name="TwoControl" Denomination="Two" Quantity="{Binding Path=Twos}"/>
-            <local:BillControl x:Name="FiveControl" Denomination="Five" Quantity="{Binding Path=Fives}"/>
-            <local:BillControl x:Name="TenControl" Denomination="Ten" Quantity="{Binding Path=Tens}"/>
-            <local:BillControl x:Name="TwentyControl" Denomination="Twenty" Quantity="{Binding Path=Twenties}"/>
-            <local:BillControl x:Name="FiftyControl" Denomination="Fifty" Quantity="{Binding Path=Fifties}"/>
-            <local:BillControl x:Name="HundredControl" Denomination="Hundred" Quantity="{Binding Path=Hundreds}"/>
-        </StackPanel>
+        <Border x:Name="UserPayment" Visibility="Visible">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height=".75*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                    <local:BillControl x:Name="OneControl" Denomination="One" Quantity="0"/>
+                    <local:BillControl x:Name="TwoControl" Denomination="Two" Quantity="0"/>
+                    <local:BillControl x:Name="FiveControl" Denomination="Five" Quantity="0"/>
+                    <local:BillControl x:Name="TenControl" Denomination="Ten" Quantity="0"/>
+                    <local:BillControl x:Name="TwentyControl" Denomination="Twenty" Quantity="0"/>
+                    <local:BillControl x:Name="FiftyControl" Denomination="Fifty" Quantity="0"/>
+                    <local:BillControl x:Name="HundredControl" Denomination="Hundred" Quantity="0"/>
+                </StackPanel>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
-            <local:CoinControl x:Name="PennyControl" Denomination="Penny" Quantity="{Binding Path=Pennies}"/>
-            <local:CoinControl x:Name="DimeControl" Denomination="Dime" Quantity="{Binding Path=Dimes}"/>
-            <local:CoinControl x:Name="NickelControl" Denomination="Nickel" Quantity="{Binding Path=Nickels}"/>
-            <local:CoinControl x:Name="QuarterControl" Denomination="Quarter" Quantity="{Binding Path=Quarters}"/>
-            <local:CoinControl x:Name="HalfDollarControl" Denomination="HalfDollar" Quantity="{Binding Path=HalfDollars}"/>
-            <local:CoinControl x:Name="DollarControl" Denomination="Dollar" Quantity="{Binding Path=Dollars}"/>
-        </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
+                    <local:CoinControl x:Name="PennyControl" Denomination="Penny" Quantity="0"/>
+                    <local:CoinControl x:Name="DimeControl" Denomination="Dime" Quantity="0"/>
+                    <local:CoinControl x:Name="NickelControl" Denomination="Nickel" Quantity="0"/>
+                    <local:CoinControl x:Name="QuarterControl" Denomination="Quarter" Quantity="0"/>
+                    <local:CoinControl x:Name="HalfDollarControl" Denomination="HalfDollar" Quantity="0"/>
+                    <local:CoinControl x:Name="DollarControl" Denomination="Dollar" Quantity="0"/>
+                </StackPanel>
 
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
 
-            <TextBlock TextAlignment="Right" FontSize="24" Grid.Column="0" Text="Total Paid: "/>
-            <TextBlock x:Name="TotalAmmount" FontSize="24" Grid.Column="1" Text="{Binding Path=TotalValue, StringFormat=c}"/>
-        </Grid>
+                    <TextBlock TextAlignment="Right" FontSize="24" Grid.Column="1" Text="Total Paid: "/>
+                    <TextBlock x:Name="TotalAmmount" FontSize="24" Grid.Column="2" Text="$0.00"/>
+                    <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1">Complete Payment</Button>
+                </Grid>
+            </Grid>
+        </Border>
+
+
+        <Border x:Name="WithRegister" Visibility="Hidden">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height=".75*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                    <local:BillControl x:Name="One" Denomination="One" Quantity="{Binding Path=Ones}"/>
+                    <local:BillControl x:Name="Two" Denomination="Two" Quantity="{Binding Path=Twos}"/>
+                    <local:BillControl x:Name="Five" Denomination="Five" Quantity="{Binding Path=Fives}"/>
+                    <local:BillControl x:Name="Ten" Denomination="Ten" Quantity="{Binding Path=Tens}"/>
+                    <local:BillControl x:Name="Twenty" Denomination="Twenty" Quantity="{Binding Path=Twenties}"/>
+                    <local:BillControl x:Name="Fifty" Denomination="Fifty" Quantity="{Binding Path=Fifties}"/>
+                    <local:BillControl x:Name="Hundred" Denomination="Hundred" Quantity="{Binding Path=Hundreds}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
+                    <local:CoinControl x:Name="Penny" Denomination="Penny" Quantity="{Binding Path=Pennies}"/>
+                    <local:CoinControl x:Name="Dime" Denomination="Dime" Quantity="{Binding Path=Dimes}"/>
+                    <local:CoinControl x:Name="Nickel" Denomination="Nickel" Quantity="{Binding Path=Nickels}"/>
+                    <local:CoinControl x:Name="Quarter" Denomination="Quarter" Quantity="{Binding Path=Quarters}"/>
+                    <local:CoinControl x:Name="HalfDollar" Denomination="HalfDollar" Quantity="{Binding Path=HalfDollars}"/>
+                    <local:CoinControl x:Name="Dollar" Denomination="Dollar" Quantity="{Binding Path=Dollars}"/>
+                </StackPanel>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock TextAlignment="Right" FontSize="24" Grid.Column="1" Text="Change to Give: "/>
+                    <TextBlock x:Name="Change" FontSize="24" Grid.Column="2" Text="{Binding Path=TotalValue, StringFormat=c}"/>
+                    <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1">Complete Payment</Button>
+                </Grid>
+            </Grid>
+        </Border>
     </Grid>
+    
+
+    
+
 </UserControl>
