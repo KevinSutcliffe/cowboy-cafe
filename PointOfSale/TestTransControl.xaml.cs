@@ -26,7 +26,7 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for TestTransControl.xaml
     /// </summary>
-    public partial class TestTransControl : UserControl
+    public partial class TestTransControl : UserControl, INotifyPropertyChanged
     {
         /// <summary>
         /// Used to update the values on the xaml page
