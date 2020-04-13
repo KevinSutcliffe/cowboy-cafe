@@ -70,7 +70,7 @@ namespace PointOfSale
                 //Container.Child = new TestTransControl(cd, this);
                 mw.Container.Child = new TestTransControl(cd, this);
 
-                //DataContext = new Order();
+                DataContext = new Order();
             }
         }
 

@@ -216,7 +216,7 @@ namespace PointOfSale
             /* Make new order */
             oc.DataContext = new Order();
             oc.Container.Child = new MenuItemSelectionControl();
-            //mw.Container.Child = oc;
+            mw.Container.Child = oc;
         }
 
 
