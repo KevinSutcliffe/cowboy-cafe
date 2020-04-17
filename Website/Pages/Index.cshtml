@@ -1,0 +1,63 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome to Cowboy Cafe!</h1>
+        <p>
+            We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+            Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
+            Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
+            You’ve had a hard ride - so take it easy with us.
+        </p>
+
+        <h2>Here at the Cowboy Cafe we have Entrees, Sides, and Drinks!</h2>
+        <!--<img src="../cowboy-cafe-images/BuckingBronco.png" /> -->
+    </div>
+<div class="Entrees">
+    <h2>Entrees</h2>
+    @foreach(CowboyCafe.Data.Entree e in CowboyCafe.Data.Menu.Entrees())
+    {
+        <div class="menuEntree">
+            @e.ToString()
+            <p>Price: @e.Price</p>
+            <p>Calories: @e.Calories</p>
+        </div>
+    }
+</div>
+
+<div class="Sides">
+    <h2>Sides</h2>
+    @foreach (CowboyCafe.Data.Side s in CowboyCafe.Data.Menu.Sides())
+    {
+        @foreach (CowboyCafe.Data.Size size in Enum.GetValues(typeof(CowboyCafe.Data.Size)))
+        {
+            CowboyCafe.Data.Menu.sideIncrease(s, size);
+            <div class="menuSide">
+
+                @s.ToString()
+                <p>Price: @s.Price</p>
+                <p>Calories: @s.Calories</p>
+            </div>
+        }
+    }
+</div>
+
+<div class="Drinks">
+    <h2>Drinks</h2>
+    @foreach (CowboyCafe.Data.Drink d in CowboyCafe.Data.Menu.Drinks())
+    {
+        @foreach (CowboyCafe.Data.Size size in Enum.GetValues(typeof(CowboyCafe.Data.Size)))
+        {
+            CowboyCafe.Data.Menu.drinkIncrease(d, size);
+            <div class="menuSide">
+
+                @d.ToString()
+                <p>Price: @d.Price</p>
+                <p>Calories: @d.Calories</p>
+            </div>
+        }
+    }
+</div>
