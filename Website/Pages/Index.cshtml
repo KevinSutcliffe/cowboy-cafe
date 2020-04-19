@@ -14,16 +14,19 @@
         </p>
 
         <h2>Here at the Cowboy Cafe we have Entrees, Sides, and Drinks!</h2>
-        <!--<img src="../cowboy-cafe-images/BuckingBronco.png" /> -->
     </div>
 <div class="Entrees">
     <h2>Entrees</h2>
     @foreach(CowboyCafe.Data.Entree e in CowboyCafe.Data.Menu.Entrees())
     {
         <div class="menuEntree">
-            @e.ToString()
-            <p>Price: @e.Price</p>
-            <p>Calories: @e.Calories</p>
+            <h6>@e.ToString()</h6>
+            <div class="price">
+                Price:  @e.Price
+            </div>
+            <div class="imdb">
+                Calories: @e.Calories
+            </div>
         </div>
     }
 </div>
@@ -36,10 +39,13 @@
         {
             CowboyCafe.Data.Menu.sideIncrease(s, size);
             <div class="menuSide">
-
-                @s.ToString()
-                <p>Price: @s.Price</p>
-                <p>Calories: @s.Calories</p>
+                <h6>@s.ToString()</h6>
+                <div class="price">
+                    Price:  @s.Price
+                </div>
+                <div class="imdb">
+                    Calories: @s.Calories
+                </div>
             </div>
         }
     }
@@ -54,9 +60,13 @@
             CowboyCafe.Data.Menu.drinkIncrease(d, size);
             <div class="menuSide">
 
-                @d.ToString()
-                <p>Price: @d.Price</p>
-                <p>Calories: @d.Calories</p>
+                <h6>@d.ToString()</h6>
+                <div class="price">
+                    Price:  @d.Price
+                </div>
+                <div class="imdb">
+                    Calories: @d.Calories
+                </div>
             </div>
         }
     }
