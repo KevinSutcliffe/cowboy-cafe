@@ -3,71 +3,66 @@
 @{
     ViewData["Title"] = "Home page";
 }
+    <form>
+        <div class="text-center">
+            <h1 class="display-4">Welcome to Cowboy Cafe!</h1>
+            <p>
+                We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+                Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
+                Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
+                You’ve had a hard ride - so take it easy with us.
+            </p>
 
-    <div class="text-center">
-        <h1 class="display-4">Welcome to Cowboy Cafe!</h1>
-        <p>
-            We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
-            Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
-            Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
-            You’ve had a hard ride - so take it easy with us.
-        </p>
+            <h2>Here at the Cowboy Cafe we have Entrees, Sides, and Drinks!</h2>
+        </div>
 
-        <h2>Here at the Cowboy Cafe we have Entrees, Sides, and Drinks!</h2>
-    </div>
-<div class="Entrees">
-    <h2>Entrees</h2>
-    @foreach(CowboyCafe.Data.Entree e in CowboyCafe.Data.Menu.Entrees())
-    {
-        <div class="menuEntree">
-            <h6>@e.ToString()</h6>
-            <div class="te">
-                Price:  @e.Price
+        <div id="search">
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="submit" value="Search">
+        </div>
+
+        <div id="filters">
+
+            <h4>Category</h4>
+            @foreach (String category in CowboyCafe.Data.Menu.Category)
+            {
+                <label>
+                    <input type="checkbox" name="Category" value="@category" checked="@Model.Category.Contains(category)" />
+                    @category
+                </label>
+            }
+
+            <h4>Calories</h4>
+            <div>
+                Between
+                <input name="CaloriesMin" type="number" min="0" max="900" step="1" placeholder="min" value="@Model.CaloriesMin"/>
+                and
+                <input name="CaloriesMax" type="number" min="0" max="900" step="1" placeholder="max" value="@Model.CaloriesMax"/>
             </div>
-            <div class="imdb">
-                Calories: @e.Calories
+
+            <h4>Price</h4>
+            <div>
+                Between
+                <input name="PriceMin" type="number" min="0" max="10.00" step="0.01" placeholder="min" value="@Model.PriceMin"/>
+                and
+                <input name="PriceMax" type="number" min="0" max="10.00" step="0.01" placeholder="max" value="@Model.PriceMax"/>
             </div>
         </div>
-    }
-</div>
 
-<div class="Sides">
-    <h2>Sides</h2>
-    @foreach (CowboyCafe.Data.Side s in CowboyCafe.Data.Menu.Sides())
-    {
-        @foreach (CowboyCafe.Data.Size size in Enum.GetValues(typeof(CowboyCafe.Data.Size)))
-        {
-            CowboyCafe.Data.Menu.sideIncrease(s, size);
-            <div class="menuSide">
-                <h6>@s.ToString()</h6>
-                <div class="price">
-                    Price:  @s.Price
+        <div class="ItemDisplay">
+            
+            @foreach (CowboyCafe.Data.IOrderItem i in Model.ItemsFound)
+            {
+                <div class="menuEntree">
+                    <h6>@i.ToString()</h6>
+                    <div class="te">
+                        Price:  @i.Price
+                    </div>
+                    <div class="imdb">
+                        Calories: @i.Calories
+                    </div>
                 </div>
-                <div class="imdb">
-                    Calories: @s.Calories
-                </div>
-            </div>
-        }
-    }
-</div>
-
-<div class="Drinks">
-    <h2>Drinks</h2>
-    @foreach (CowboyCafe.Data.Drink d in CowboyCafe.Data.Menu.Drinks())
-    {
-        @foreach (CowboyCafe.Data.Size size in Enum.GetValues(typeof(CowboyCafe.Data.Size)))
-        {
-            CowboyCafe.Data.Menu.drinkIncrease(d, size);
-            <div class="menuSide">
-
-                <h6>@d.ToString()</h6>
-                <div class="price">
-                    Price:  @d.Price
-                </div>
-                <div class="imdb">
-                    Calories: @d.Calories
-                </div>
-            </div>
-        }
-    }
-</div>
+            }
+            
+        </div>
+    </form>
